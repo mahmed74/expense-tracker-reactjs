@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+.mainDiv {
+    overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mainDivApp {
+    width: 40rem;
+    height: fit-content;
+    border: 2px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    overflow: hidden;
+    border-radius: 0 3rem;
+    /* box-shadow: 1rem 2rem 2rem gray; */
+    transition: linear 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mainDivApp:hover,
+.mainDivApp:focus {
+    box-shadow: 1rem 2rem 1.5rem gray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Transaction-form input {
+    width: 110%;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SecondRow {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.amountDiv {
+    border-right: 1px solid gray;
+    padding: 1rem;
+}
+
+.amountDiv h2 {
+    border-bottom: 1px solid gray;
+}
+
+.incomeSpan {
+    border-bottom: 2px solid green !important;
+}
+
+.expenseSpan {
+    border-bottom: 2px solid red !important;
+}
+
+
+/*  Hisitory  */
+
+.History h3 {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.transaction_list li {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    border-bottom: 1px solid gray;
+    padding: 0.4rem;
+    margin: 0.3rem 0;
+}
+
+.minus {
+    border-right: 3px solid red;
+}
+
+.plus {
+    border-right: 3px solid green;
+}
+
+
+/*   Delete Btn  */
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 3px 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+li:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn {
+    width: auto;
+    background-color: gray;
+}
+
+@media only screen and (max-width: 768px) {
+    .mainDivApp {
+        width: 95%;
+        height: fit-content;
+    }
+    .amountDiv h2 {
+        font-size: 110%;
+    }
+    .incomeExpenses h4 {
+        font-size: 100%;
+    }
+    .AddTransactionclass h4,
+    .AddTransactionclass h5 {
+        font-size: 100%;
+    }
+    .History h2,
+    .History h3 {
+        font-size: 100%;
+    }
 }
